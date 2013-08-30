@@ -44,7 +44,7 @@ GORD provides access to the following types of SCCM functionality:
 
 # Specific Method Reference
 
-See: [WmiutilPydoc](https://raw.github.com/jongillies/gord/master/wmiutilpydoc.md)
+See: [WmiutilPydoc](https://github.com/jongillies/gord/blob/master/wmiutilpydoc.md)
 
 # Design
 
