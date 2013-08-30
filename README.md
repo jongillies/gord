@@ -24,13 +24,13 @@ GORD provides a central resource to access SCCM functionality via an API abstrac
 
 The server process itself is designed to operate as a Windows® service, in the manner that Windows® system administrators are familiar with. In other words, it can be managed via the standard Microsoft® Service Controller or via the Services MMC snap-in, it writes logs into Event Viewer. 
 
-![gord-workflow.png](https://raw.github.com/jongillies/gord/master/doc/gord-service-design.png)
+![gord-workflow.png](https://raw.github.com/jongillies/gord/master/doc/gord-workflow.png)
 
 The client communicates with GORD over HTTP (or HTTPS). GORD handles authentication, and adapts calls onto the underlying API. In this example, GORD is speaking via the WMI protocol to the SCCM Data Provider, so HTTP and WMI are the well defined boundaries that separate the client from the underlying system. GORD is intentionally designed such that it is straightforward to replace either interface; a transport besides HTTP can be added, and/or an underlying system other than WMI/SCCM can be exposed.
 
 The below chart depicts how the modular pieces of GORD fit together. The Windows® Service manages execution of the HTTP(S) server. Requests through the HTTP server are matched with registered methods in service.ServiceMethods, and once authenticated execute code for direct interaction with the underlying API. 
 
-gord-service-design.png
+![gord-service-design.png](https://raw.github.com/jongillies/gord/master/doc/gord-service-design.png)
 
 # SCCM Functionality Made Available
 
